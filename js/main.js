@@ -124,11 +124,11 @@ jQuery(function ($) {
 	form.submit(function(event){
 		event.preventDefault();
 		var form_status = $('<div class="form_status"></div>');
-        var nombre = $(".name").val(),
-            email = $(".email").val(),
-            telefono = $(".telephone").val(),
-            mensaje = $(".menssage").val(),
-            datos = 'nombre='+ nombre + '&email=' + email + '&telefono=' + telefono + '&mensaje=' + mensaje;
+        var nombre = $(".name").val();
+        var email = $(".email").val();
+        var telefono = $(".telephone").val();
+        var mensaje = $(".menssage").val();
+        var datos = 'nombre='+ nombre + '&email=' + email + '&telefono=' + telefono + '&mensaje=' + mensaje;
 		$.ajax({
             type: "POST",
 			url: "http://www.google.es",
