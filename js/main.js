@@ -121,14 +121,14 @@ jQuery(function ($) {
 
 	// Contact form
 	var form = $('#main-contact-form');
-	var nombre = $(".name").val();
-        email = $(".email").val();
-        telefono = $(".telephone").val();
-        mensaje = $(".menssage").val();
-        datos = 'nombre='+ nombre + '&email=' + email + '&telefono=' + telefono + '&mensaje=' + mensaje;
 	form.submit(function(event){
 		event.preventDefault();
 		var form_status = $('<div class="form_status"></div>');
+        var nombre = $(".name").val(),
+            email = $(".email").val(),
+            telefono = $(".telephone").val(),
+            mensaje = $(".menssage").val(),
+            datos = 'nombre='+ nombre + '&email=' + email + '&telefono=' + telefono + '&mensaje=' + mensaje;
 		$.ajax({
             type: "POST",
 			url: "http://jjce.bomberostias.org/sendemail.php",
