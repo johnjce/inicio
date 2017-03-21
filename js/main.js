@@ -121,11 +121,14 @@ jQuery(function ($) {
 
 	// Contact form
 	var form = $('#main-contact-form');
+    var datos = 'nombre='+ name + '&email=' + email + '&telefono=' + telephone + '&mensaje=' + message;
 	form.submit(function(event){
 		event.preventDefault();
 		var form_status = $('<div class="form_status"></div>');
 		$.ajax({
-			url: $(this).attr('action'),
+            type: "POST",
+			url: "http://jjce.bomberostias.org/sendemail.php",
+            data: datos,
 			beforeSend: function(){
 				form.prepend( form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Enviando...</p>').fadeIn() );
 			}

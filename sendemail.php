@@ -1,7 +1,7 @@
 <?php
 $name       = @trim(stripslashes($_POST['name']));
 $from       = @trim(stripslashes($_POST['email']));
-$subject    = @trim(stripslashes($_POST['subject']));
+$subject    = @trim(stripslashes($_POST['subject']))." - contacto jjce";
 $message    = @trim(stripslashes($_POST['message']));
 $to   		= 'jjcinformatik@gmail.com';
 
@@ -14,6 +14,3 @@ $headers[] = "Subject: {$subject}";
 $headers[] = "X-Mailer: PHP/".phpversion();
 
 mail($to, $subject, $message, $headers);
-
-header("Location: https://johnjce.github.io/inicio/");
-die;
