@@ -1,21 +1,21 @@
-jQuery(function($) {
+jQuery(function ($) {
 
 	//Preloader
 	var preloader = $('.preloader');
-	$(window).load(function(){
+	$(window).load(function () {
 		preloader.remove();
 	});
 
 	//#main-slider
 	var slideHeight = $(window).height();
-	$('#home-slider .item').css('height',slideHeight);
+	$('#home-slider .item').css('height', slideHeight);
 
-	$(window).resize(function(){'use strict',
+	$(window).resize(function () {'use strict',
 		$('#home-slider .item').css('height',slideHeight);
 	});
 
 	//Scroll Menu
-	$(window).on('scroll', function(){
+	$(window).on('scroll', function (){
 		if( $(window).scrollTop()>slideHeight ){
 			$('.main-nav').addClass('navbar-fixed-top');
 		} else {
