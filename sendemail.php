@@ -1,16 +1,28 @@
 <?php
-$name       = @trim(stripslashes($_POST['name']));
-$from       = @trim(stripslashes($_POST['email']));
-$subject    = @trim(stripslashes($_POST['subject']))." - contacto jjce";
-$message    = @trim(stripslashes($_POST['message']));
-$to   		= 'jjcinformatik@gmail.com';
+echo "aki";
+// Guardar los datos recibidos en variables:
+$nombre = $_POST['nombre'];
+$email = $_POST['email'];
+$telefono = $_POST['telefono'];
+$mensaje = $_POST['mensaje'];
+// Definir el correo de destino:
+$dest = "jjcinformatik@gmail.com";
 
-$headers   = array();
-$headers[] = "MIME-Version: 1.0";
-$headers[] = "Content-type: text/plain; charset=iso-8859-1";
-$headers[] = "From: {$name} <{$from}>";
-$headers[] = "Reply-To: <{$from}>";
-$headers[] = "Subject: {$subject}";
-$headers[] = "X-Mailer: PHP/".phpversion();
+// Estas son cabeceras que se usan para evitar que el correo llegue a SPAM:
+$headers = "From: $nombre <$email>\r\n";
+$headers .= "X-Mailer: PHP5\n";
+$headers .= 'MIME-Version: 1.0' . "\n";
+$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
-mail($to, $subject, $message, $headers);
+// Aqui definimos el asunto y armamos el cuerpo del mensaje
+$asunto = "Contacto desde jjce";
+$cuerpo = "Nombre: ".$nombre."<br>";
+$cuerpo .= "Email: ".$email."<br>";
+$cuerpo .= "Telefono: ".$telefono."<br>";
+$cuerpo .= "Mensaje: ".$mensaje;
+
+// Aqui envia el correo:
+    mail($dest,$asunto,$cuerpo,$headers); //ENVIAR!
+}
+
+?>
