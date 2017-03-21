@@ -29,7 +29,7 @@ jQuery(function($) {
 	});
 
 	$('.navbar-collapse ul li a').on('click', function() {
-		$('html, body').animate({scrollTop: $(this.hash).offset().top - 5}, 1000);
+		$('html, body').animate({scrollTop: $(this.hash).offset().top - 50}, 1000);
 		return false;
 	});
 
@@ -127,10 +127,10 @@ jQuery(function($) {
 		$.ajax({
 			url: $(this).attr('action'),
 			beforeSend: function(){
-				form.prepend( form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Email is sending...</p>').fadeIn() );
+				form.prepend( form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Enviando...</p>').fadeIn() );
 			}
 		}).done(function(data){
-			form_status.html('<p class="text-success">Thank you for contact us. As early as possible  we will contact you</p>').delay(3000).fadeOut();
+			form_status.html('<p class="text-success">Gracias por contactar. Le respodere lo antes posible</p>').delay(3000).fadeOut();
 		});
 	});
 
