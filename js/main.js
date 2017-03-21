@@ -124,14 +124,14 @@ jQuery(function ($) {
 	form.submit(function(event){
 		event.preventDefault();
 		var form_status = $('<div class="form_status"></div>');
-        var nombre = $(".name").val();
+        var name = $(".name").val();
         var email = $(".email").val();
-        var telefono = $(".telephone").val();
-        var mensaje = $(".message").val();
-        var datos = 'nombre='+ nombre + '&email=' + email + '&telefono=' + telefono + '&mensaje=' + mensaje;
+        var telephone = $(".telephone").val();
+        var message = $(".message").val();
+        var datos = 'name='+ name + '&email=' + email + '&telephone=' + telephone + '&message=' + message;
 		$.ajax({
             type: "POST",
-			url: "http://jjce.bomberostias.org/sendemail.php",
+            url: "http://jjce.bomberostias.org/sendemail.php",
             data: datos,
             beforeSend: function(){
 				form.prepend( form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Enviando...</p>').fadeIn() );
