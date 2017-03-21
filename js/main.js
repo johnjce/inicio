@@ -130,9 +130,9 @@ jQuery(function ($) {
         var message = $(".message").val();
         var datos = 'name='+ name + '&email=' + email + '&telephone=' + telephone + '&message=' + message;
 		$.ajax({
-            url: 'http://jjce.bomberostias.org/sendemail.php',
             type: 'POST',
             dataType : 'html',
+            url: 'http://jjce.bomberostias.org/sendemail.php',
             data: datos,
             beforeSend: function(){
 				form.prepend( form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Enviando...</p>').fadeIn() );
