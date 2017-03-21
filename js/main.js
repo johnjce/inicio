@@ -121,7 +121,11 @@ jQuery(function ($) {
 
 	// Contact form
 	var form = $('#main-contact-form');
-    var datos = 'nombre='+ name + '&email=' + email + '&telefono=' + telephone + '&mensaje=' + message;
+    var nombre = $(".name").val();
+        email = $(".email").val();
+        telefono = $(".telephone").val();
+        mensaje = $(".menssage").val();
+        datos = 'nombre='+ nombre + '&email=' + email + '&telefono=' + telefono + '&mensaje=' + mensaje;
 	form.submit(function(event){
 		event.preventDefault();
 		var form_status = $('<div class="form_status"></div>');
