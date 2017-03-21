@@ -129,9 +129,16 @@ jQuery(function ($) {
             type: "POST",
 			url: "http://jjce.bomberostias.org/sendemail.php",
             data: datos,
-			beforeSend: function(){
+            beforeSend: function(){
 				form.prepend( form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Enviando...</p>').fadeIn() );
-			}
+			},
+            success: function() {
+                form_status.html('<p class="text-success">Gracias por contactar. Le respodere lo antes posible</p>').delay(3000).fadeOut();
+            },
+            error: function() {
+               form_status.html('<p class="text-error">no se ha enviado, intentelo de nuevo mas tarde.</p>').delay(3000).fadeOut();
+            }
+
 		}).done(function(data){
 			form_status.html('<p class="text-success">Gracias por contactar. Le respodere lo antes posible</p>').delay(3000).fadeOut();
 		});
