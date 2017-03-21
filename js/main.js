@@ -140,8 +140,8 @@ jQuery(function ($) {
             success: function(){
 				form_status.html('<p class="text-success">Gracias por contactar. Le respodere lo antes posible</p>').delay(3000).fadeOut();
 			},
-            error: function(){
-				form_status.html('<p class="text-error">Error - algo fallo!</p>').delay(3000).fadeOut();
+            error: function( e ){
+				form_status.html('<p class="text-error">Error - algo fallo!' + e + '</p>').delay(3000).fadeOut();
 			}
 		});
 	});
