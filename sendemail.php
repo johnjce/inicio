@@ -1,14 +1,14 @@
 <?php
 // Guardar los datos recibidos en variables:
-    $nombre = $_POST['nombre'];
-    $email = $_POST['email'];
-    $telefono = $_POST['telefono'];
-    $mensaje = $_POST['mensaje'];
+    foreach($_POST as $nombre_campo => $valor){
+       $asignacion = "\$" . $nombre_campo . "='" . $valor . "';";
+       eval($asignacion);
+    }
 // Definir el correo de destino:
     $dest = "jjcinformatik@gmail.com";
 
 // Estas son cabeceras que se usan para evitar que el correo llegue a SPAM:
-    $headers = "From: Contacto desde jjce <$dest>\r\n";
+    $headers = "From: jjce<contacto@johnjce.github.io>\r\n";
     $headers .= "X-Mailer: PHP5\n";
     $headers .= 'MIME-Version: 1.0' . "\n";
     $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
