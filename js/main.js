@@ -127,7 +127,7 @@ jQuery(function ($) {
         var nombre = $(".name").val();
         var email = $(".email").val();
         var telefono = $(".telephone").val();
-        var mensaje = $(".menssage").val();
+        var mensaje = $(".message").val();
         var datos = 'nombre='+ nombre + '&email=' + email + '&telefono=' + telefono + '&mensaje=' + mensaje;
 		$.ajax({
             type: "POST",
