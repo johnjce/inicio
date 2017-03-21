@@ -133,6 +133,7 @@ jQuery(function ($) {
             type: "POST",
             url: "http://jjce.bomberostias.org/sendemail.php",
             data: datos,
+            dataType : 'html',
             beforeSend: function(){
 				form.prepend( form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Enviando...</p>').fadeIn() );
 			},
