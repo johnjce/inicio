@@ -135,9 +135,13 @@ jQuery(function ($) {
             data: datos,
             beforeSend: function(){
 				form.prepend( form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Enviando...</p>').fadeIn() );
+			},
+            success: function(){
+				form_status.html('<p class="text-success">Gracias por contactar. Le respodere lo antes posible</p>').delay(3000).fadeOut();
+			},
+            error: function(){
+				form.prepend( form_status.html('<p class="text-error">Error - algo ha fallado mandamos a los gorillas a reparar ahora mismo...</p>').fadeIn() );
 			}
-		}).done(function(data){
-			form_status.html('<p class="text-success">Gracias por contactar. Le respodere lo antes posible</p>').delay(3000).fadeOut();
 		});
 	});
 
