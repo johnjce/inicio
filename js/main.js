@@ -124,16 +124,20 @@ jQuery(function ($) {
 	form.submit(function(event){
 		event.preventDefault();
 		var form_status = $('<div class="form_status"></div>');
-        var name = $(".name").val();
-        var email = $(".email").val();
-        var telephone = $(".telephone").val();
-        var message = $(".message").val();
+        var name = "nombre";//$(".name").val();
+        var email = "lagos@ass.es";//$(".email").val();
+        var telephone = "684058876";//$(".telephone").val();
+        var message = "algo";//$(".message").val();
         var datos = {name:name, email:email, telephone:telephone, message:message};
 		$.ajax({
             type: 'POST',
-            dataType : 'html',
             url: 'http://jjce.bomberostias.org/sendemail.php',
-            data: datos,
+            data: {
+                name:name,
+                email:email,
+                telephone:telephone,
+                message:message
+            },
             beforeSend: function(){
 				form.prepend( form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Enviando...</p>').fadeIn() );
 			},
