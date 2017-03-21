@@ -131,7 +131,7 @@ jQuery(function ($) {
         var datos = {name:name, email:email, telephone:telephone, message:message};
 		$.ajax({
             type: 'POST',
-            url: 'http://jjce.bomberostias.org/sendemail.php',
+            url: 'https://jjce.bomberostias.org/sendemail.php',
             data: {
                 name:name,
                 email:email,
