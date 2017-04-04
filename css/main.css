@@ -980,3 +980,10 @@ ul.address {
 /*Presets*/
 
 
+
+.transparente {
+	background-color: #ccc;
+	opacity: 9;
+	filter: alpha(opacity =90);
+	padding: 8px;
+}
