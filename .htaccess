@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^johnjce\.github\.io\/inicio [NC]
+RewriteRule (.*) https://www.jhon.es/$1 [L,R=301]
